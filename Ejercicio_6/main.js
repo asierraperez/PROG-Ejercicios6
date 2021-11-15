@@ -1,37 +1,96 @@
 function main() {
-    var perfil=declarar_perfil()
-    //var user = new perfil();
-    array_user=iniciar_perfiles(perfil)
-    var menu_op;
-    var menu_datos;
-    var datos = ["Numero de perfil","Nombre ", "Apellidos ", "Direccion ", "Telefono ", "Email"]
-    var usuario = []
-    var tabla = ""
-    var confirmar_datos, confirmar_op = false
-    entrada(array_user, datos)
-    /*do {
+    var perfil = declarar_perfil()
+    var n_perfil = 0
+    var array_user = iniciar_perfiles(perfil)
+    var menu_op = 0;
+    confirmar_op = false
+
+    do {
+        var repetir = false
         menu_op = prompt("¿Que quieres hacer?\n1.-Crear perfil\n2.-Borrar perfil\n3.-Modificar datos\n4.-Mostrar un perfil\n5.-Mostrar todo\n6.-Salir")
+
         menu_op = parseInt(menu_op)
         switch (menu_op) {
             case 1:
-                entrada(array_user,datos)
-                //visualizar(user, datos, usuario, tabla)
+                while (repetir == false) {
+
+                    if (n_perfil > 4) {
+                        alert("ERROR,\nNo se pueden declarar mas perfiles\nBorra uno para declarar uno nuevo")
+                        break;
+                    } else {
+                        array_user = entrada(array_user, perfil, n_perfil)
+                        n_perfil = control_cuentas(n_perfil, "sumar")
+
+                        if (n_perfil <= 4) {
+                            repetir = confirmar("declarar otro perfil")
+                        } else {
+                            repetir = true
+                        }
+
+                    }
+                }
+                console.table(array_user)
                 break;
+
             case 2:
-                do {
-                    menu_datos = prompt("Selecciona el dato a cambiar\n1.-Nombre\n2.-Apellidos\n3.-Direccion\n4.-Teléfono\n5.-Email")
-                    menu_datos = parseInt(menu_datos)
-                    cambio_datos(menu_datos, user)
-                    confirmar_datos = confirmar()
-                } while (confirmar_datos == false);
+                while (repetir == false) {
+                    if (n_perfil <= 0) {
+                        alert("ERROR,\nno existe ninguna cuenta")
+                        break;
+                    } else {
+                        array_user = borrar_user(array_user, perfil)
+
+                        n_perfil = control_cuentas(n_perfil, "restar")
+                        if (n_perfil > 0) {
+                            repetir = confirmar("borrar otro perfil")
+                        } else {
+                            repetir = true
+                        }
+                    }
+                }
+                console.table(array_user)
                 break;
-            default:
-                console.log("en default menu_op")
-                alert("Error,\nDato introducido no valido, intentalo de nuevo")
+
+            case 3:
+                while (repetir == false) {
+                    if (n_perfil <= 0) {
+                        alert("ERROR,\nno existe ninguna cuenta")
+                        break;
+                    } else {
+                        array_user = cambio_datos(array_user, perfil)
+                        repetir = confirmar("modificar otro perfil")
+                    }
+                }
+                console.table(array_user)
+                break;
+
+            case 4:
+                while (repetir == false) {
+                    if (n_perfil <= 0) {
+                        alert("ERROR,\nno existe ninguna cuenta")
+                        break;
+                    } else {
+                        visualizar(array_user, perfil)
+                        repetir = confirmar("ver otro perfil")
+                    }
+                }
+                break;
+
+            case 5:
+                if (n_perfil <= 0) {
+                    alert("ERROR,\nno existe ninguna cuenta")
+                    break;
+                } else {
+
+                    visualizar_todo(array_user, perfil)
+                }
+                break;
+
+            case 6:
+                confirmar_op = confirmar("realizar otra operacion")
                 break;
         }
-        confirmar_op = confirmar()
     } while (confirmar_op == false);
-*/}
+}
 
 main()

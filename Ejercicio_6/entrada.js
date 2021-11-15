@@ -1,24 +1,25 @@
-function entrada(array_user,datos) {
-    for (let index = 0; index < array_user.length; index++) {
-        for (const property in array_user[index]) {
-            console.log(datos[index])
-        }       
+function entrada(array_user, perfil, n_perfil) {
+    var aux_crear_user = array_user
+    var user_individual = new perfil()
+
+    //primero recorro la matriz de objetos
+    for (let i = 0; i <= aux_crear_user.length; i++) {
+        //'numero' es el nombre de la primeroa variable. 
+        //Si es =0, quiere decir que no hay ningun perfil en esa posición
+        if (aux_crear_user[i].numero == 0) {
+            //una vez encontrada una posicion libre le asigno valores
+            for (const id in user_individual) {
+                if (id == "numero") {
+                    user_individual[id] = i + 1
+                } else {
+                    user_individual[id] = prompt("Introduce " + id + " de perfil " + (i + 1))
+                }
+            }
+            aux_crear_user[i] = user_individual
+            break
+        }
+
     }
-   
-    /*user.nombre = prompt("Introduce tu nombre")
-    //user.nombre ="alvaro"
-    usuario[0] = user.nombre
-    user.apellidos = prompt("Introduce tu apellidos")
-    //user.apellidos ="Sierra"
-    usuario[1] = user.apellidos
-    user.direccion = prompt("Introduce tu direccion")
-    //user.direccion ="Calle falsa"
-    usuario[2] = user.direccion
-    user.tlfno = prompt("Introduce tu numero de telefono")
-    //user.tlfno ="123456"
-    usuario[3] = user.tlfno
-    user.email = prompt("Introduce tu direccion de email")
-    //user.email ="a@jiop.es"
-    usuario[4] = user.email
-    console.table(user)*/
+
+    return aux_crear_user
 }

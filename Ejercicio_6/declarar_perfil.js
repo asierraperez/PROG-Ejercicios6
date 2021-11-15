@@ -1,11 +1,13 @@
-function declarar_perfil(){
+function declarar_perfil() {
+
     var Perfil = function () {
-        var numero=""
-        var nombre = ""
-        var apellidos = ""
-        var direccion = ""
-        var tlfno = ""
-        var email = ""
-    }
+        this.numero = 0,
+            this.nombre = "",
+            this.apellidos = "",
+            this.direccion = "",
+            this.tlfno = "",
+            this.email = ""
+    };
+
     return Perfil
 }

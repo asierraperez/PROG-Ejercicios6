@@ -4,7 +4,7 @@ function visualizar(array_user, perfil) {
     var ver_user_individual = new perfil()
     var tabla = ""
     var errores = 0
-    var ver_perfil = prompt("Indica numero de perfil a modificar(1 a 5) o nombre del usuario")
+    var ver_perfil = prompt("Indica numero de perfil a ver (1 a 5) o nombre del usuario")
 
     //Recorro la matriz buscando el usuario
     for (let i = 0; i < aux_ver_array_ind.length; i++) {

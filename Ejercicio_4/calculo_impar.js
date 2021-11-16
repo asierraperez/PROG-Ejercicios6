@@ -1,6 +1,7 @@
 function calculo_impar(matriz) {
     var impar = []
     var auxiliar
+    var k = 0
     for (let i = 0; i < matriz.length; i++) {
         auxiliar = matriz[i] % 2
         if (auxiliar == 1) {

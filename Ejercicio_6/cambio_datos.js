@@ -3,7 +3,7 @@ function cambio_datos(array_user, perfil) {
     var aux_cambio_datos = array_user
     var mod_user_individual = new perfil()
     var errores = 0
-    var mod_perfil = prompt("Indica numero de perfil a modificar(1 a 5) o nombre del usuario")
+    var mod_perfil = prompt("Indica numero de perfil a modificar (1 a 5) o nombre del usuario")
 
     //primero recorro la matriz de perfiles
     for (let i = 0; i < aux_cambio_datos.length; i++) {

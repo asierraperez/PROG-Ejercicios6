@@ -1,7 +1,7 @@
 function visualizar(matriz, par, impar) {
-    var tabla=""
-    var tabla_par=""
-    var tabla_impar=""
+    var tabla = ""
+    var tabla_par = ""
+    var tabla_impar = ""
     for (let i = 0; i < matriz.length; i++) {
         if (i == 0) {
             tabla = matriz[i] + tabla
@@ -16,7 +16,7 @@ function visualizar(matriz, par, impar) {
             tabla_par = par[j] + " ," + tabla_par
         }
     }
-    for (let k = 0; k < array.length; k++) {
+    for (let k = 0; k < impar.length; k++) {
 
         if (k == 0) {
             tabla_impar = impar[k] + tabla_impar
@@ -24,7 +24,7 @@ function visualizar(matriz, par, impar) {
             tabla_impar = impar[k] + " ," + tabla_impar
         }
     }
-    alert("Matriz: "+tabla+"\nNumeros pares: "+tabla_par+"\nnumeros impares: "+tabla_impar)
+    alert("Matriz: " + tabla + "\nNumeros pares: " + tabla_par + "\nnumeros impares: " + tabla_impar)
 
 
 

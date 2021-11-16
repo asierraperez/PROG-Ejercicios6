@@ -4,7 +4,7 @@ function borrar_user(array_user, perfil) {
     var borrar_user_individual = new perfil()
     var usuario_vacio = new perfil()
     var errores = 0
-    var seleccion_user = prompt("Indica numero de perfil a borrar(1 a 5) o nombre del usuario")
+    var seleccion_user = prompt("Indica numero de perfil a borrar (1 a 5) o nombre del usuario")
 
     //Primero recorro la matriz de perfiles
     for (let index = 0; index < aux_borra_user.length; index++) {
